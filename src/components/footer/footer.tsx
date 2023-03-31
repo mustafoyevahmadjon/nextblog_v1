@@ -12,7 +12,7 @@ const Footer = () => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '& .MuiDrawer-paper',
+        backgroundColor: '#141414',
         color: 'white',
       }}
     >
