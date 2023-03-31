@@ -15,7 +15,8 @@ const Hero = () => {
             }}>
                 {data.map(item => (
                     <Box key={item.image} >
-                        <Box sx={{ position: "relative", width: "100%", height: "70vh" }}></Box>
+                        <Box sx={{ position: "relative", width: "100%", height: "70vh" }}>
+                            
                         <Image src={item.image} alt={item.title} fill style={{ objectFit: 'cover' }} />
                         <Box
                             sx={{
@@ -29,7 +30,7 @@ const Hero = () => {
                                 backgroundColor: 'rgba(0, 0, 0, .6)',
                             }}
                         />
-                        <Box sx={{ width: "100%", top: '50%', transform: 'translateY(-300%)', paddingLeft: { xs: '10px', sm: '50px' } }} position={"relative"} color={"white"} zIndex={999}>
+                        <Box sx={{ width: "100%", top: '50%', transform: 'translateY(-50%)', paddingLeft: { xs: '10px', sm: '50px' } }} position={"relative"} color={"white"} zIndex={999}>
                             <Typography variant='h2'>{item.title}</Typography>
                             <Typography variant='h5'>{item.exerpt}</Typography>
                             <Box sx={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
@@ -39,6 +40,7 @@ const Hero = () => {
                                     <Box>{format(new Date(), 'd.MM.yy')} &#x2022; 10min read</Box>
                                 </Box>
                             </Box>
+                        </Box>
                         </Box>
                     </Box>
                 ))}
