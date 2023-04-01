@@ -7,7 +7,7 @@ import React, { Fragment } from 'react'
 const Sidebar = () => {
   return (
     <>
-      <Box width={"30%"} position={"sticky"} top={100}>
+      <Box width={{ xs: "100%", md: "30%" }} position={"sticky"} top={100}>
         <Box position={'sticky'} top={'100px'} sx={{ transition: 'all .3s ease' }}>
           <Box padding={"20px"} border={"1px solid gray"} borderRadius={"8px"}>
             <Typography variant='h5'>Latest Blog</Typography>
@@ -32,13 +32,13 @@ const Sidebar = () => {
               ))}
             </Box>
           </Box>
-          
+
           <Box marginTop={"20px"} padding={"20px"} border={"1px solid gray"} borderRadius={"8px"}>
             <Typography variant='h5'>Category</Typography>
             <Box sx={{ display: 'flex', flexDirection: "column", marginTop: '20px' }}>
               {navItems.map(nav => (
                 <Fragment key={nav.route}>
-                  <Button sx={{ justifyContent: "flex-start", height: "50px" }} fullWidth >{nav.label}</Button>
+                  <Button sx={{ justifyContent: "flex-start", height: "50px" }} style={{ color: "white" }} fullWidth >{nav.label}</Button>
                   <Divider />
                 </Fragment>
               ))}
