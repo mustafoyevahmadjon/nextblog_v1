@@ -3,6 +3,7 @@ import { Avatar, Box, Button, Divider, Typography } from '@mui/material'
 import { format } from 'date-fns'
 import Image from 'next/image'
 import React, { Fragment } from 'react'
+import { calculateEstimatedTimeToRead } from '../content/time.format'
 import { SidebarProps } from './sidebar.props'
 
 const Sidebar = ({ latestBlogs, categories }: SidebarProps) => {
@@ -23,7 +24,7 @@ const Sidebar = ({ latestBlogs, categories }: SidebarProps) => {
                         <Avatar alt={item.author.name} src={item.author.avatar.url} />
                         <Box>
                           <Typography>{item.author.name}</Typography>
-                          <Box sx={{ opacity: ".6" }}>{format(new Date(), 'd.MM.yy')} &#x2022; 10min read</Box>
+                          <Box>{format(new Date(item.createdAt), 'd.MM.yy')} &#x2022; {calculateEstimatedTimeToRead(item.description.text)} min read</Box>
                         </Box>
                       </Box>
                     </Box>
