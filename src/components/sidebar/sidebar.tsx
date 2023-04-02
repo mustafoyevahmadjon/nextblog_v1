@@ -3,8 +3,9 @@ import { Avatar, Box, Button, Divider, Typography } from '@mui/material'
 import { format } from 'date-fns'
 import Image from 'next/image'
 import React, { Fragment } from 'react'
+import { SidebarProps } from './sidebar.props'
 
-const Sidebar = () => {
+const Sidebar = ({ latestBlogs, categories }: SidebarProps) => {
   return (
     <>
       <Box width={{ xs: "100%", md: "30%" }} position={"sticky"} top={100}>
@@ -12,14 +13,14 @@ const Sidebar = () => {
           <Box padding={"20px"} border={"1px solid gray"} borderRadius={"8px"}>
             <Typography variant='h5'>Latest Blog</Typography>
             <Box sx={{ display: 'flex', flexDirection: "column", marginTop: '20px' }}>
-              {data.map(item => (
+              {latestBlogs.map(item => (
                 <Box marginTop={"20px"} key={item.title}>
                   <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
-                    <Image src={item.image} alt={item.title} width={100} height={100} style={{ objectFit: "cover", borderRadius: "8px" }} />
+                    <Image src={item.image.url} alt={item.title} width={100} height={100} style={{ objectFit: "cover", borderRadius: "8px" }} />
                     <Box sx={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                       <Typography variant='body1'>{item.title}</Typography>
                       <Box sx={{ display: 'flex', gap: '10px' }}>
-                        <Avatar alt={item.author.name} src={item.author.image} />
+                        <Avatar alt={item.author.name} src={item.author.avatar.url} />
                         <Box>
                           <Typography>{item.author.name}</Typography>
                           <Box sx={{ opacity: ".6" }}>{format(new Date(), 'd.MM.yy')} &#x2022; 10min read</Box>
@@ -36,8 +37,8 @@ const Sidebar = () => {
           <Box marginTop={"20px"} padding={"20px"} border={"1px solid gray"} borderRadius={"8px"}>
             <Typography variant='h5'>Category</Typography>
             <Box sx={{ display: 'flex', flexDirection: "column", marginTop: '20px' }}>
-              {navItems.map(nav => (
-                <Fragment key={nav.route}>
+              {categories.map(nav => (
+                <Fragment key={nav.slug}>
                   <Button sx={{ justifyContent: "flex-start", height: "50px" }} style={{ color: "white" }} fullWidth >{nav.label}</Button>
                   <Divider />
                 </Fragment>
