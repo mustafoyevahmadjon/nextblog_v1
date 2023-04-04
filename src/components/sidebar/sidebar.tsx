@@ -2,11 +2,13 @@ import { navItems } from '@/config/constants'
 import { Avatar, Box, Button, Divider, Typography } from '@mui/material'
 import { format } from 'date-fns'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import React, { Fragment } from 'react'
-import { calculateEstimatedTimeToRead } from '../content/time.format'
+import { calculateEstimatedTimeToRead } from '../../helpers/time.format'
 import { SidebarProps } from './sidebar.props'
 
 const Sidebar = ({ latestBlogs, categories }: SidebarProps) => {
+  const router = useRouter()
   return (
     <>
       <Box width={{ xs: "100%", md: "30%" }} position={"sticky"} top={100}>
@@ -15,7 +17,7 @@ const Sidebar = ({ latestBlogs, categories }: SidebarProps) => {
             <Typography variant='h5'>Latest Blog</Typography>
             <Box sx={{ display: 'flex', flexDirection: "column", marginTop: '20px' }}>
               {latestBlogs.map(item => (
-                <Box marginTop={"20px"} key={item.title}>
+                <Box marginTop={"20px"} key={item.title} onClick={() => router.push(`/blog/${item.slug}`)}>
                   <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
                     <Image src={item.image.url} alt={item.title} width={100} height={100} style={{ objectFit: "cover", borderRadius: "8px" }} />
                     <Box sx={{ display: "flex", flexDirection: "column", gap: "10px" }}>
