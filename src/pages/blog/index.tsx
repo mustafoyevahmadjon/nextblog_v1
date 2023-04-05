@@ -4,22 +4,25 @@ import { Content } from '@/components';
 import { BlogsType } from '@/interface/blogs.interface';
 import Layout from '@/layout/layout';
 import { BlogsService } from '@/services/blog.service';
+import SEO from '@/seo/seo';
 
 const BlogPage = ({ blogs }: BLogPageProps) => {
   return (
-    <Layout>
-      <Box
-        sx={{
-          display: 'flex',
-          gap: '20px',
-          flexDirection: { xs: 'column', md: 'row' },
-          padding: '20px',
-          justifyContent: 'center',
-        }}
-      >
-        <Content blogs={blogs} />
-      </Box>
-    </Layout>
+    <SEO metaTitle='All Blogs'>
+      <Layout>
+        <Box
+          sx={{
+            display: 'flex',
+            gap: '20px',
+            flexDirection: { xs: 'column', md: 'row' },
+            padding: '20px',
+            justifyContent: 'center',
+          }}
+        >
+          <Content blogs={blogs} />
+        </Box>
+      </Layout>
+    </SEO>
   )
 }
 

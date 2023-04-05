@@ -55,7 +55,7 @@ const Navbar = ({ window }: Props) => {
           >
             <MenuIcon />
           </IconButton>
-          <Box sx={{ cursor: "pointer", alignItems: 'center', gap: "8px", flexGrow: 1, display: { xs: 'none', sm: 'flex pointer' } }}>
+          <Box sx={{ cursor: "pointer", alignItems: 'center', gap: "8px", flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
             <AdjustIcon />
             <Typography variant='h6' component='div' sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
               Mustafo

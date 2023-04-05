@@ -11,7 +11,7 @@ const Sidebar = ({ latestBlogs, categories }: SidebarProps) => {
   const router = useRouter()
   return (
     <>
-      <Box width={{ xs: "100%", md: "30%" }} position={"sticky"} top={100}>
+      <Box width={{ xs: "100%", md: "30%" }} style={{ cursor: "pointer" }} top={100}>
         <Box position={'sticky'} top={'100px'} sx={{ transition: 'all .3s ease' }}>
           <Box padding={"20px"} border={"1px solid gray"} borderRadius={"8px"}>
             <Typography variant='h5'>Latest Blog</Typography>
@@ -56,24 +56,3 @@ const Sidebar = ({ latestBlogs, categories }: SidebarProps) => {
 }
 
 export default Sidebar
-
-const data = [
-  {
-    image: 'https://media.graphassets.com/MxJZhmooRRuudoErkQ38',
-    title: 'Technical SEO with Hygraph',
-    exerpt: 'Get started with your SEO implementation when using a Headless CMS',
-    author: {
-      name: 'Samar Badriddinov',
-      image: 'https://media.graphassets.com/DkfNqQNGRz2F4UFntKQx',
-    },
-  },
-  {
-    image: 'https://media.graphassets.com/bh3K2NNtTHCN260Xfq9h',
-    title: 'Union Types and Sortable Relations with Hygraph',
-    exerpt: 'Learn more about Polymorphic Relations and Sortable Relations with Hygraph',
-    author: {
-      name: 'Samar Badriddinov',
-      image: 'https://media.graphassets.com/DkfNqQNGRz2F4UFntKQx',
-    },
-  },
-];
