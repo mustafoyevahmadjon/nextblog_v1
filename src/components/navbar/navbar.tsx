@@ -5,12 +5,14 @@ import Box from '@mui/material/Box';
 import { useState } from 'react';
 import { navItems } from '@/config/constants';
 import AdjustIcon from '@mui/icons-material/Adjust';
+import { useRouter } from 'next/router';
 
 interface Props {
   window?: () => Window;
 }
 
 const Navbar = ({ window }: Props) => {
+  const router = useRouter()
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -53,14 +55,14 @@ const Navbar = ({ window }: Props) => {
           >
             <MenuIcon />
           </IconButton>
-          <Box sx={{ alignItems: 'center', gap: "8px", flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
+          <Box sx={{ cursor: "pointer", alignItems: 'center', gap: "8px", flexGrow: 1, display: { xs: 'none', sm: 'flex pointer' } }}>
             <AdjustIcon />
             <Typography variant='h6' component='div' sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
               Mustafo
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map(item => (
-                <Button key={item.route} sx={{ color: '#fff' }}>
+                <Button onClick={() => router.push(item.route)} key={item.route} sx={{ color: '#fff' }}>
                   {item.label}
                 </Button>
               ))}
