@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -18,9 +19,12 @@ const Footer = () => {
     >
       <Typography>© {format(new Date(), 'yyyy')} Mustafo. All Right Reserved.</Typography>
       <Box sx={{ display: 'flex', gap: '15px' }}>
-        <TelegramIcon sx={{ cursor: 'pointer' }} />
-        <InstagramIcon sx={{ cursor: 'pointer' }} />
-        <YouTubeIcon sx={{ cursor: 'pointer' }} />
+        <Link target='_blank' href={`https://t.me/Mfavy2031`}>
+          <TelegramIcon sx={{ cursor: 'pointer' }} />
+        </Link>
+        <Link target='_blank' href={`https://www.instagram.com/ahmadjon23012/`}>
+          <InstagramIcon sx={{ cursor: 'pointer' }} />
+        </Link>
       </Box>
     </Box>
   );

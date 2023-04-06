@@ -17,8 +17,7 @@ const DetailedBlogsPage = ({ categories, latestBlogs, blog }: DetailedBlogsPageP
   return (
     <SEO metaTitle={blog.title}>
       <Layout>
-        <Box sx={{ display: 'flex', gap: '20px', flexDirection: { xs: 'column', md: 'row' }, padding: '20px' }}>
-
+        <Box mt={"7vh"} sx={{ display: 'flex', gap: '20px', flexDirection: { xs: 'column', md: 'row' }, padding: '20px' }}>
           <Box width={{ xs: '100%', md: '70%' }}>
             <Box sx={{ backgroundColor: "rgba(0,0,0,.5)", padding: "20px", marginTop: "20px", borderRadius: "8px", boxShadow: "0px 8px 16px rgba(255, 255, 255, .1)" }} position={'relative'}
               width={'100%'}

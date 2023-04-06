@@ -43,8 +43,8 @@ const Navbar = ({ window }: Props) => {
   );
 
   return (
-    <Box height={'10vh'} sx={{ display: 'flex' }}>
-      <AppBar sx={{ height: "10vh" }} component='nav'>
+    <Box sx={{ display: 'flex' }}>
+      <AppBar component='nav'>
         <Toolbar>
           <IconButton
             color='inherit'
