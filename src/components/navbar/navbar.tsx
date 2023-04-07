@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { navItems } from '@/config/constants';
 import AdjustIcon from '@mui/icons-material/Adjust';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 interface Props {
   window?: () => Window;
@@ -56,7 +57,7 @@ const Navbar = ({ window }: Props) => {
             <MenuIcon />
           </IconButton>
           <Box sx={{ cursor: "pointer", alignItems: 'center', gap: "8px", flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
-            <AdjustIcon />
+            <Image src={"/logo.png"} alt='img' width={50} height={50} style={{ objectFit: "cover" }} />
             <Typography variant='h6' component='div' sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
               Mustafo
             </Typography>

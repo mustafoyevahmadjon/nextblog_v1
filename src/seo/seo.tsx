@@ -11,7 +11,7 @@ const SEO = ({ children, metaDescription = siteConfig.metaDescription, metaTitle
                 <meta name='keyword' content={metaKeywords} />
                 <meta name='author' content={author} />
                 <meta name='description' content={metaDescription} />
-                <link rel='shortcut icon' href={'/vercel.svg'} type='image/x-icon' />
+                <link rel='shortcut icon' href={'/logo.png'} type='image/x-icon' />
             </Head>
             {children}
         </>
